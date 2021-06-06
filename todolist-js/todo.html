@@ -3,10 +3,11 @@
     <link href="todostyle.css" rel="stylesheet" />
     <script>
       let todo_array = new Array();
-      let li, ul;
+      let li, ul,todofield;
 
       function process(event) {
         event.preventDefault();
+        todofield=document.getElementById("todo");
         const todo = document.getElementById("todo").value;
         todo_array.unshift(todo);
         display();
@@ -23,7 +24,9 @@
           ul.appendChild(li);
           document.getElementById(i).addEventListener("click", deleteli, false);
         }
-        return false;
+        todofield.value='';
+        todofield.focus();
+
       }
 
       function deleteli(event) {
