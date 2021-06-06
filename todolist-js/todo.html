@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <link href="todostyle.css" rel="stylesheet" />
+    <script>
+      let todo_array = new Array();
+      let li, ul;
+
+      function process(event) {
+        event.preventDefault();
+        const todo = document.getElementById("todo").value;
+        todo_array.unshift(todo);
+        display();
+      }
+
+      function display() {
+        ul = document.getElementById("todolist");
+        ul.innerText = "";
+        for (let i of todo_array) {
+          console.log(i);
+          li = document.createElement("li");
+          li.innerText = i;
+          li.id = i;
+          ul.appendChild(li);
+          document.getElementById(i).addEventListener("click", deleteli, false);
+        }
+        return false;
+      }
+
+      function deleteli(event) {
+        const li = event.currentTarget;
+        console.log(li);
+        const content = li.innerText;
+        console.log(content);
+        for (var i = 0; i < todo_array.length; i++) {
+          if (todo_array[i] == content) {
+            todo_array.splice(i, 1);
+            i--;
+          }
+        }
+        display();
+      }
+    </script>
+  </head>
+  <body>
+    <center>
+      <form onsubmit="process(event)">
+        <input type="text" name="todo" id="todo" />
+        <button id="addbtn">Add todo</button>
+      </form>
+    </center>
+    <hr />
+    <ul id="todolist"></ul>
+  </body>
+</html>

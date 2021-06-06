@@ -1,0 +1,21 @@
+#todolist{
+    width:30%;
+    margin: auto;
+    list-style-type: none;
+}
+#todolist li{
+    border:2px solid rgb(127, 127, 133);
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+#todolist li:hover{
+    border-bottom:2px solid red;
+
+}
+
+#todolist li:hover::after{
+    content: "------->click to delete";
+    color: indianred;
+}
