@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>video as text background</title>
+        <style>
+            .main_div{
+                position: absolute;
+                width:1000px;
+                height:600px;
+                border:2px solid blue;
+            }
+            .main_div video{
+                height: 100%;
+                width:100%;
+            }
+
+            .main_div .text_div{
+                
+                position: absolute;
+                top:0;
+                left:0;
+                background: #fff;
+                height: 100%;
+                width:100%;
+                text-align: center;
+                line-height: 300px;
+                mix-blend-mode: screen;
+                font-size: 8rem;
+                font-weight: 900;
+                letter-spacing: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main_div">
+            <video class="video" autoplay loop muted>
+                <!--provide link to your video-->
+                <source src="mountain.mp4" type="video/mp4"/>
+            </video>
+            <div class="text_div">
+                <!-- your text here-->
+                <p>MOUNTAINS</p>
+            </div>
+
+        </div>
+    </body>
+</html>
