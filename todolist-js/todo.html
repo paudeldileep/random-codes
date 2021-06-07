@@ -37,7 +37,7 @@
         for (var i = 0; i < todo_array.length; i++) {
           if (todo_array[i] == content) {
             todo_array.splice(i, 1);
-            i--;
+            break;
           }
         }
         display();
